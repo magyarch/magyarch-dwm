@@ -5,7 +5,8 @@
 # Dmenu script for editing some of my more frequently edited config files.
 
 
-declare options=("alias
+declare options=("alacritty
+alias
 bash
 dwm
 profile
@@ -20,6 +21,9 @@ choice=$(echo -e "${options[@]}" | rofi -dmenu -i -no-custom -p 'Edit a config f
 case "$choice" in
 	quit)
 		echo "Program terminated." && exit 1
+	;;
+        alacritty)
+		choice="$HOME/.config/alacritty/alacritty.yml"
 	;;
 	alias)
 		choice="$HOME/.config/aliasrc"

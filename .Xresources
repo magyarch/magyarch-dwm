@@ -59,5 +59,14 @@ URxvt.urlLauncher: firefox
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
 
+#Xft.dpi: 156
+#Xft.autohint: 0
+#Xft.lcdfilter: lcddefault
+#Xft.hintstyle: hintslight
+#Xft.hinting: true
+#Xft.antialias: 1
+#Xft.rgba: rgb
+
+#Xcursor.size: 32
 
 

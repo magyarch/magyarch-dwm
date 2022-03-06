@@ -76,7 +76,6 @@ static const struct arg args[] = {
 	/*{ run_command,  " %s |", "curl wttr.in?format=3" },*/
 	{ run_command,  "%s |",  "weather" },
 	{ datetime, "📅 %s |",  "%Y-%m-%d 🕛 %H:%M" },
-	/*{ run_command,  "🔊 %2s |", "amixer sget Master | grep Right | grep % | sed 's/[][]//g' | awk '{print $5}' " },*/
-	{ run_command,  "🔊 %s%% |",  "volume" },
+	{ run_command,  "%s |",  "volume" },
 	{ keymap,    "⌨️ %s |",     NULL },
 };

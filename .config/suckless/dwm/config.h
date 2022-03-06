@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 8;        /* gaps between windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int gappx     = 16;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -10,7 +10,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono Nerd Font:pixelsize=14" , "JoyPixels:pixelsize=11:antialias=true:autohint=true" , "FontAwesome:pixelsize=12" };
+static const char *fonts[]          = { "JetBrains Mono Nerd Font:pixelsize=23" , "JoyPixels:pixelsize=20:antialias=true:autohint=true" , "FontAwesome:pixelsize=23" };
 static const char dmenufont[]       = "JetBrains Mono Nerd Font:pixelsize=13";
 static const char col_1[]       = "#1a1a1a";  /* background color of bar and border color unfocused windows */
 static const char col_2[]       = "#c3cdc8";  /* foreground color of bar and tags */
@@ -23,8 +23,8 @@ static const char *colors[][3]  = {
 
 /* tagging */
 /*static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };*/
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
-/* static const char *tags[] = { "🥎 ", "🎭 ", "📋 ", "🍭 ", "🎲 ", "🎬 ", "🔰 ",  "📂 ", "🤖 " };*/
+/*static const char *tags[] = { "", "", "", "", "", "", "", "", "" };*/
+static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII",  "IX" };
 
 /* launcher commands (They must be NULL terminated) */
 static const char* xmenucmd[]      = { "xmenu.sh", "|*M*|", NULL };
@@ -87,8 +87,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "mst", "-t", scratchpadname, "-g", "120x30", "-e", "ncmpcpp", NULL };
-static const char *termcmd[] = { "st", "-g", "120x30", NULL };
+static const char *scratchpadcmd[] = { "mst", "-t", scratchpadname, "-g", "160x40", "-e", "ncmpcpp", NULL };
+static const char *termcmd[] = { "st", "-g", "160x40", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
