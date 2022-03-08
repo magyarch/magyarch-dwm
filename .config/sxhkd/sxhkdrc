@@ -81,7 +81,7 @@ super + {F9,F10}
 
 # Increase,decrease volume -5
 alt + {Up,Down}
-    {amixer set Master 5%+,amixer set Master 5%-}
+    {pamixer --allow-boost -i 1,pamixer --allow-boost -d 1}
 
 # Mute volume
 F12
