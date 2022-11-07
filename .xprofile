@@ -1,23 +1,22 @@
 #!/bin/sh
 
-#xrandr --dpi 192
-#export GDK_SCALE=2
+xrandr --dpi 156
+export GDK_SCALE=2
 setbg &		# Set the background
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc &	# application key binding
 xsetroot -cursor_name left_ptr &
 xset r rate 400 30 &	# Speed xrate up
 unclutter &		# Remove mouse when idle
-picom --experimental-backends --shadow-exclude-reg '1920+0-0' --inactive-opacity 1.00 --opacity-rule "80:class_g = 'st-256color'" --opacity-rule "80:class_g = 'Alacritty'" --opacity-rule "80:class_g = 'URxvt'" --blur-background-exclude "class_g = 'slop'" -CGfF -o 0.70 -O 0.028 -I 0.028 -t 0 -l 0 -r 2 -D2 -m 1.00 &
-dunst & # dunst for notifications
 slstatus &  # status bar
 mpdupdate &
-blueberry-tray &
+#blueberry-tray &
 nm-applet &  # networkmanager tray icon
 #xrandr --primary --output DP-0 --dpi 156 --mode 3840x2160 --rate 60 --pos 0x0  &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+picom -b --config ~/.config/picom.conf --experimental-backends &
 #xwallpaper --no-randr --stretch ~/.config/wallpaper.png
 #zathura ~/.local/share/Magyarch-dwm.pdf &
-sleep 2s && notify-send 'Nyomja meg a Super+F1-et a használati utasításért.' -t 10000 &
+#sleep 2s && notify-send 'Nyomja meg a Super+F1-et a használati utasításért.' -t 10000 &
 
 
 

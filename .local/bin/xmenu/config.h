@@ -3,7 +3,7 @@ static struct Config config = {
 	.font = "monospace:size=9,JetBrains Mono Nerd Font:size=9",
 
 	/* colors */
-	.background_color = "#2f2b26",
+	.background_color = "#000000",
 	.foreground_color = "#c3cdc8",
 	.selbackground_color = "#2e8b57",
 	.selforeground_color = "#FFFFFF",
@@ -11,8 +11,8 @@ static struct Config config = {
 	.border_color = "#E6E6E6",
 
 	/* sizes in pixels */
-	.width_pixels = 130,        /* minimum width of a menu */
-	.height_pixels = 25,        /* height of a single menu item */
+	.width_pixels = 136,        /* minimum width of a menu */
+	.height_pixels = 28,        /* height of a single menu item */
 	.border_pixels = 1,         /* menu border */
 	.separator_pixels = 3,      /* space around separator */
 	.gap_pixels = 0,            /* gap between menus */

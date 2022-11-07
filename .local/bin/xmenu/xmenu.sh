@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cat <<EOF | xmenu -p 20x20:cursor | sh &
+cat <<EOF | xmenu -p 80x40:cursor | sh &
  Applications
 	 Brave		brave
 	 Terminal	alacritty
