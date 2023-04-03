@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrains Mono Nerd Font:pixelsize=24:antialias=true:autohint=true";
+static char *font = "JetBrains Mono Nerd Font:size=11:antialias=true:autohint=true";
 /* Spare fonts */
-static char *font2[] = { "JoyPixels:pixelsize=20:antialias=true:autohint=true" };
+static char *font2[] = { "JoyPixels:size=9:antialias=true:autohint=true" };
 
 static int borderpx = 2;
 
@@ -122,7 +122,7 @@ static const char *colorname[] = {
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#1a1a1a", /* background */
+	"#282a36", /* background */
 	"#c3cdc8", /* foreground */
 };
 
