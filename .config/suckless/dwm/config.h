@@ -1,38 +1,38 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 8;        /* border pixel of windows */
-static const unsigned int gappx     = 20;        /* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int borderpx       = 8;        /* border pixel of windows */
+static const unsigned int gappx          = 20;        /* gaps between windows */
+static const unsigned int snap           = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 1;     /* 0 means no systray */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono Nerd:size=11" , "JoyPixels:size=9:antialias=true:autohint=true" , "FontAwesome:size=11" };
-static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=11";
-static const char col_1[]       = "#282a36";  /* background color of bar and border color unfocused windows */
-static const char col_2[]       = "#c3cdc8";  /* foreground color of bar and tags */
-static const char col_3[]       = "#947cc3";  /* border color focused windows and tags */
-static const char *colors[][3]  = {
+static const int showsystray             = 1;     /* 0 means no systray */
+static const int showbar                 = 1;        /* 0 means no bar */
+static const int topbar                  = 1;        /* 0 means bottom bar */
+static const char *fonts[]               = { "JetBrains Mono Bold Nerd:size=11:antialias=true:autohint=true" , "JoyPixels:size=9:antialias=true:autohint=true" , "FontAwesome:size=11:antialias=true:autohint=true" };
+static const char dmenufont[]            = "JetBrainsMono Nerd:size=11";
+static const char col_1[]                = "#282a36";  /* background color of bar and border color unfocused windows */
+static const char col_2[]                = "#c3cdc8";  /* foreground color of bar and tags */
+static const char col_3[]                = "#947cc3";  /* border color focused windows and tags */
+static const char *colors[][3]           = {
 	/*               fg     bg     border   */
 	[SchemeNorm] = { col_2, col_1, col_1 },
 	[SchemeSel]  = { col_2, col_3, col_3 },
 };
 
 /* tagging */
-/*static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };*/
+/*static const char *tags[] = { "🐧", "🔎", "⌨️", "💬", "👾", "🧲", "🖌️", "📺", "📸"};
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };*/
+/*static const char *tags[] = { "I", "II", "III", "IV", "V", "VI","VII", "VIII", "IX" };*/
 static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
-/* launcher commands (They must be NULL terminated) */
+/* launcher commands (They must be NULL terminated)*/ 
 static const char* xmenucmd[]      = { "xmenu.sh", "|*M*|", NULL };
-
 static const Launcher launchers[] = {
 	  { xmenucmd,         "|*M*|" },
        /* command       name to display */
 	/*{ surf,         "surf" },*/
-
 
 };
 
@@ -42,17 +42,17 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class           instance    title       tags mask     isfloating   monitor */
-	{ "st-256color",    NULL,       NULL,       0,            1,           -1 },
-	{ "Zathura",        NULL,       NULL,       0,            1,           -1 },
-	{ "Brave-browser",  NULL,       NULL,       1 << 0,       0,           -1 },
+	{ "qBittorrent",    NULL,       NULL,       1 << 6,        0,           -1 },
+	{ "Zathura",        NULL,       NULL,       0,             1,           -1 },
+	{ "Microsoft-edge", NULL,       NULL,       1 << 0,        0,           -1 },
 	{ "discord",        NULL,       NULL,       1 << 1,        0,          -1 },
-	{ "Subl3",          NULL,       NULL,       1 << 2,        0,          -1 },
+	{ "Subl",           NULL,       NULL,       1 << 2,        0,          -1 },
 	{ "Steam",          NULL,       NULL,       1 << 4,        0,          -1 },
     { "Pavucontrol",    NULL,       NULL,       0,             1,          -1 },
 };
 
 /* layout(s) */
-static const float mfact     = 0.40; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
@@ -61,7 +61,7 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	
-        { "[]=",      tile },      /* first entry is default */
+    { "[]=",      tile },      /* first entry is default */
 	{ "[@]",      spiral },
  	{ "[\\]",     dwindle },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
@@ -96,13 +96,13 @@ static Key keys[] = {
 	/*{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },*/
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ ALTMOD,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_Tab,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Tab,    focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Left,      movestack,      {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_Right,      movestack,      {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_Left,   movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_Right,  movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_z,      zoom,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ ALTMOD,                       XK_t,      setlayout,      {.v = &layouts[0]} },  /* tile */

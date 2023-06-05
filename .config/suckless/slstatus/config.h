@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 2000;
+const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -63,19 +63,12 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ uptime,	"💡 %s | ", NULL },
-	{ kernel_release,      "🐧 %s | ",  NULL },
 	{ ram_used,     "🧠 %s/",   NULL },
 	{ ram_total,    "%s | ", NULL },
-	/*{ cpu_perc,     "🚀 %s%% |",   NULL },*/
+	{ run_command,     "🚀 %s |", "cpufreq.sh" },
 	{ run_command,  "♨️ %s | ",	"sensors | awk  '/Tctl:/ {print $2}' " },
-	{ netspeed_rx,  "⬇️ %sB/s | ",   "enp7s0" },
-	{ netspeed_tx,  "⬆️ %sB/s | ",          "enp7s0" },
-	{ disk_used,	"🏢 %s/ ", "/" },
-	{ disk_total,    "%s | ", "/" },
-	{ run_command,  "🧪 %s | ",  "nvidia-smi -q --gpu=0 | awk '/GPU Current Temp/ {print $5 $6}'" },
+	{ run_command,  "💸 %s | ",  "nvidia-smi -q --gpu=0 | awk '/GPU Current Temp/ {print $5 $6}'" },
 	{ run_command,	"%s | ",  "weather" },
 	{ datetime,	"📅 %s | ",  "%Y-%m-%d 🕛 %H:%M" },
 	{ run_command,  "%s	| ",  "volume" },
-	{ keymap,	"⌨️%s	 | ",     NULL },
 };
