@@ -10,11 +10,11 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray             = 1;     /* 0 means no systray */
 static const int showbar                 = 1;        /* 0 means no bar */
 static const int topbar                  = 1;        /* 0 means bottom bar */
-static const char *fonts[]               = { "JetBrains Mono Nerd:size=10:antialias=true:autohint=true" , "JoyPixels:size=9:antialias=true:autohint=true" , "FontAwesome:size=11:antialias=true:autohint=true" };
+static const char *fonts[]               = { "JetBrainsMonoMedium Nerd:size=10:antialias=true:autohint=true" , "JoyPixels:size=8:antialias=true:autohint=true" , "FontAwesome:size=11:antialias=true:autohint=true" };
 static const char dmenufont[]            = "JetBrainsMono Nerd:size=11";
 static const char col_1[]                = "#282a36";  /* background color of bar and border color unfocused windows */
-static const char col_2[]                = "#c3cdc8";  /* foreground color of bar and tags */
-static const char col_3[]                = "#947cc3";  /* border color focused windows and tags */
+static const char col_2[]                = "#f8f8f2";  /* foreground color of bar and tags */
+static const char col_3[]                = "#bd93f9";  /* border color focused windows and tags */
 static const char *colors[][3]           = {
 	/*               fg     bg     border   */
 	[SchemeNorm] = { col_2, col_1, col_1 },

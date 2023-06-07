@@ -1,9 +1,7 @@
 # dwm - dynamic window manager
 # See LICENSE file for copyright and license details.
 
-
 include config.mk
-
 
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
@@ -28,7 +26,7 @@ dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
 clean:
-	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz config.h
+	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
 
 dist: clean
 	mkdir -p dwm-${VERSION}
