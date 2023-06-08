@@ -14,11 +14,7 @@ static const char *fonts[]               = { "JetBrainsMonoMedium Nerd:size=10:a
 static const char dmenufont[]            = "JetBrainsMono Nerd:size=11";
 static const char col_1[]                = "#282a36";  /* background color of bar and border color unfocused windows */
 static const char col_2[]                = "#f8f8f2";  /* foreground color of bar and tags */
-<<<<<<< HEAD
 static const char col_3[]                = "#d36135";  /* border color focused windows and tags */
-=======
-static const char col_3[]                = "#bd93f9";  /* border color focused windows and tags */
->>>>>>> 0afb3d0a01896ebda5fe64f1da8109e7b8bb399e
 static const char *colors[][3]           = {
 	/*               fg     bg     border   */
 	[SchemeNorm] = { col_2, col_1, col_1 },
