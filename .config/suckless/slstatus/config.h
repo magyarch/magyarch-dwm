@@ -65,10 +65,11 @@ static const struct arg args[] = {
 	/* function format          argument */
 	{ ram_used,     "🧠 %s/",   NULL },
 	{ ram_total,    "%s | ", NULL },
-	{ run_command,     "🚀 %s |", "cpufreq.sh" },
-	{ run_command,  "♨️ %s | ",	"sensors | awk  '/Tctl:/ {print $2}' " },
+	{ cpu_freq,     "🚀 %s | ", NULL },
+    { cpu_perc,     "📢 %s% | ", NULL },
+	{ run_command,  "🔥 %s | ",	"sensors | awk  '/Tctl:/ {print $2}' " },
 	{ run_command,  "💸 %s | ",  "nvidia-smi -q --gpu=0 | awk '/GPU Current Temp/ {print $5 $6}'" },
 	{ run_command,	"%s | ",  "weather" },
 	{ datetime,	"📅 %s | ",  "%Y-%m-%d 🕛 %H:%M" },
-	{ run_command,  "%s	| ",  "volume" },
+	{ run_command,  "%s	| ", "volume" },
 };
