@@ -16,7 +16,7 @@ sxhkd
 xprofile
 quit")
 
-choice=$(echo -e "${options[@]}" | dmenu -i -c -g 1 -l 15 -nb '#000000' -sb '#947cc3' -fn 'JetBrains Mono Medium-12' -p 'Edit config files: ')
+choice=$(echo -e "${options[@]}" | dmenu -p 'Edit config files: ')
 
 case "$choice" in
 	quit)

@@ -4,14 +4,14 @@
 
 !! Colorscheme
 
-*background:  #1a1a1a
+*background:  #282a36
 *foreground:  #c3cdc8
  black:       #313539
  red:         #c63737
  green:       #2e8b57
  yellow:      #f2e635
  blue:        #314ad0
- magenta:     #b30ad0
+ magenta:     #6272a4
  cyan:        #32d0fc
  white:       #c3cdc8
 
