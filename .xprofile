@@ -13,7 +13,7 @@ mpdupdate &
 nm-applet &  # networkmanager tray icon
 #xrandr --primary --output DP-0 --dpi 156 --mode 3840x2160 --rate 60 --pos 0x0  &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-picom -b --config ~/.config/picom.conf --experimental-backends &
+picom --config ~/.config/picom.conf --experimental-backends &
 #xwallpaper --no-randr --stretch ~/.config/wallpaper.png
 #zathura ~/.local/share/Magyarch-dwm.pdf &
 #sleep 2s && notify-send 'Nyomja meg a Super+F1-et a használati utasításért.' -t 10000 &
