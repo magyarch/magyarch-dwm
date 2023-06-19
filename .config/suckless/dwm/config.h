@@ -38,8 +38,8 @@ static const Rule rules[] = {
 	{ "st-256color",    NULL,       NULL,       0,             1,           -1 },
 	{ "Microsoft-edge", NULL,       NULL,       1 << 0,        0,           -1 },
 	{ "discord",        NULL,       NULL,       1 << 1,        0,          -1 },
-	{ "Subl",           NULL,       NULL,       1 << 2,        0,          -1 },
-	{ "Steam",          NULL,       NULL,       1 << 4,        0,          -1 },
+	{ "subl3",           NULL,       NULL,       1 << 2,        0,          -1 },
+	{ "steam",          NULL,       NULL,       1 << 4,        0,          -1 },
     { "Pavucontrol",    NULL,       NULL,       0,             1,          -1 },
 };
 

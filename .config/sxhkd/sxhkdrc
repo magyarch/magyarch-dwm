@@ -12,7 +12,7 @@ super + {_,shift + } r
 
 # Show keys with rofi/sublime default gui editor
 super + {_,shift + } e
-    {show_keys.sh, subl}
+    {wmctrl -x -a "tabbed" || tabbed alacritty --embed, subl}
 
 # Newsboat for rss, tui music player
 super + {_,shift + } n
@@ -40,7 +40,7 @@ super + {KP_Home,KP_End}
 
 # Kill recording and stream
 super + shift + x
-    killall ffmpeg
+    wmctrl -x -a "alacritty" || alacritty -e tmux
 
 #################################################
            # ALT + KEYS#
