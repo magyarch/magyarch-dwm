@@ -1,5 +1,6 @@
 #!/bin/sh
 
+source .profile
 #xrandr --dpi 192
 #export GDK_SCALE=2
 setbg &		# Set the background
