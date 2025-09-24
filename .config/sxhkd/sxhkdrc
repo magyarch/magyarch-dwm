@@ -1,92 +1,57 @@
-# Main terminal
-super + Return
-    $TERMINAL
+# MagyArch Linux i3wm keybinds #
+#########################################
 
-# Dmenu2 and rofi(window switcher, application launcher)
-super + {_,shift +} d
-    {dmenu_run,rofi -show window}
-
-# Tui filemanager and same command with sudo
-super + {_,shift + } r
-   {$TERMINAL -e $FILE, $TERMINAL -e sudo $FILE}
-
-# Show keys with rofi/sublime default gui editor
-super + {_,shift + } e
-    {wmctrl -x -a "tabbed" || tabbed alacritty --embed, subl}
-
-# Newsboat for rss, tui music player
-super + {_,shift + } n
-    {$TERMINAL -e newsboat, $TERMFLOAT -g 110x30 -e ncmpcpp}
-
-# Powermenu S,R,lock,calendar app
-super + {_,shift + } c
-    {power, $TERMFLOAT -e calcurse}
-
-# Default web browser brave/rofi show windows
-super + {_,shift + } w
-    {$BROWSER, rofi_run -w}
+# Terminal emulator
+super + shift + Return
+     scratch scratchpad
 
 # Chat client, gui filemanager
 super + {_,shift + } p
-    {discord, pcmanfm}
+    {discord, thunar}
 
-# Reload sxhkd
-super + Escape
-    pkill -USR1 -x sxhkd ;\notify-send "Sxhkd újratölt."
+# open gui text editor sublime
+super + shift + e
+    subl
 
-# Record and stream
-super + {KP_Home,KP_End}
-    {dmenurecord, live.sh}
+# Show keybind in rofi,htop system monitor
+super + {_,shift + } n
+    {scratch Music, scratch News}
 
-# Kill recording and stream
-super + shift + x
-    wmctrl -x -a "alacritty" || alacritty -e tmux
 
-#################################################
-           # ALT + KEYS#
-################################################
-
-# On/off transparency, pavucontrol
-super + {a,b}
-   {pavucontrol,toggleprogram "picom -b"}
-
-##############################################
-        # FUNCTION KEYS#
-#############################################
-
-# Open help doc
-super + F1
-    zathura ~/.local/share/Magyarch-dwm.pdf
-
-# Edit conf files,select display,search the net
-super + {F2,F3}
-  {edconf.sh,rofi_run -b}
-
-# Change background
+# Wallpaper chenger
 super + F8
     wal
-
-# Take and pick screenshot
-super + {F4,F5}
-    {maim ~/Képek/Képernyőképek/`date +%Y-%m-%d_%H:%M:%S`.png,maimpick}
 
 # Mount and umount a USB drive or Android device
 super + {F9,F10}
     {dmenumount,dmenuumount}
 
-
-###########################################
-        # Volume Control
-###########################################
-
-# Increase,decrease volume -5
+# Decrease/increase volume +-5
 alt + {Up,Down}
-    {pamixer --allow-boost -i 10,pamixer --allow-boost -d 10}
+    {pamixer --allow-boost -i 5 && pkill -RTMIN+10 i3blocks, pamixer --allow-boost -d 5 && pkill -RTMIN+10 i3blocks}
 
 # Mute volume
 F12
-   amixer set Master toggle
+   layout_manager.sh
 
-# Test phase
-F1
-  tdrop -ma -w 1914 -y 0 st
+#################################################################################
+######################### i3 Bindings ##########################################
+
+# Quit,reboot,shutdown menu/i3; reload config
+super + c
+     eww open --toggle powermenu
+
+# i3; restart i3 in-place (preserves layout/session)
+super + r
+     $TERMINAL -e $FILE
+
+ # Gaps increase
+super + a
+  swaymsg gaps outer current plus 5
+
+# Gaps decrease
+super + shift + a
+  swaymsg gaps outer current minus 5
+
+
+

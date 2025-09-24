@@ -8,7 +8,7 @@ super + {_,shift + } Return
 
 # Dmenu2 and rofi(window switcher, application launcher)
 super + {_,shift +} d
-    {dmenu_run, rofi_run -r}
+    {rofi_run -r, dmenu_run}
 
 # Tui filemanager and same command with sudo
 super + {_,shift + } r
