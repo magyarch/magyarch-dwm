@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 2000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -63,13 +63,12 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ ram_used,     " 🧠 %s/",   NULL },
-	{ ram_total,    " %s | ", NULL },
-	{ cpu_freq,     " 🚀 %s | ", NULL },
-    { cpu_perc,     " 📢 %s% | ", NULL },
-	{ run_command,  " 🔥 %s | ",	"sensors | awk  '/Tctl:/ {print $2}' " },
-	{ run_command,  " 💸 %s | ",  "sensors | awk '/edge:/ {print $2}' " },
-	{ datetime,	" 📅 %s | ",  "%Y-%m-%d 🕛 %H:%M " },
-	{ run_command, "🔊 %s | ", "pamixer --get-volume-human" },
+	{ ram_used,     " [ 🧠 %s / ",     NULL   },
+	{ ram_total,    " %s ] ",       NULL   },
+	{ cpu_freq,     " [ 🚀 %s ] ",    NULL   },
+    { cpu_perc,     " [ 📢 %s ] ",       NULL   },
+	{ run_command, " [ %s ] ",         "~/.local/bin/temp.sh"   },
+	{ datetime,	" [ 📅 %s] ",     "%Y-%m-%d 🕛 %H:%M "   },
+	{ run_command, " 🔊 %s ",            "pamixer --get-volume-human"     },
 
 };

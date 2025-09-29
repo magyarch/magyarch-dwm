@@ -1,56 +1,56 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 
 
 # Dmenu script for editing some of my more frequently edited config files.
 
 
-declare options=("alacritty
-alias
-bash
-dwm
-profile
-vifm
-slstatus
-sxhkd
-xprofile
+declare options=("hlwm
+ratpoison
+bspwmrc
+nixconfig
+xmonad
+sxhkdrc
+hyprland
+polybar
+.xprofile
 quit")
 
-choice=$(echo -e "${options[@]}" | dmenu -p 'Edit config files: ')
+choice=$(echo -e "${options[@]}" | rofi -dmenu -p 'Edit files: ')
 
 case "$choice" in
 	quit)
 		echo "Program terminated." && exit 1
 	;;
-        alacritty)
-		choice="$HOME/.config/alacritty/alacritty.yml"
+	hlwm)
+		choice="$HOME/.config/herbstluftwm/autostart"
 	;;
-	alias)
-		choice="$HOME/.config/aliasrc"
+	ratpoison)
+		choice="$HOME/.ratpoisonrc"
 	;;
-	bash)
-		choice="$HOME/.bashrc"
+	bspwmrc)
+		choice="$HOME/.config/bspwm/bspwmrc"
 	;;
-	dwm)
-		choice="$HOME/.config/suckless/dwm/config.def.h"
+	xmonad)
+		choice="$HOME/.config/xmonad/xmonad.hs"
 	;;
-	profile)
-		choice="$HOME/.profile"
+	sxhkdrc)
+	        choice="$HOME/.config/sxhkd/sxhkdrc"
 	;;
-	vifm)
-		choice="$HOME/.config/vifm/vifmrc"
+	hyprland)
+		choice="$HOME/.config/hypr/hyprland.conf"
 	;;
-	slstatus)
-		choice="$HOME/.config/suckless/slstatus/config.def.h"
+	nixconfig)
+		choice="/etc/nixos/configuration.nix"
 	;;
-	sxhkd)
-		choice="$HOME/.config/sxhkd/sxhkdrc"
+	polybar)
+		choice="$HOME/.config/polybar/config.ini"
 	;;
-	xprofile)
+    xprofile)
 		choice="$HOME/.xprofile"
 	;;
 	*)
 		exit 1
 	;;
 esac
-subl -c "$choice"
+kitty -e nvim  "$choice"
